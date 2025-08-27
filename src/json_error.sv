@@ -205,20 +205,21 @@ function string json_error::prettify_err_context(string err_ctx, int err_pos, in
   // Prepare final context line
   pretty_ctx = err_ctx.substr(pretty_start_idx, pretty_end_idx);
   if (pretty_start_idx > 0) begin
-    for (int i = 0; i < 3; i++) begin
-      pretty_ctx[i] = "."; // just to show that error is far away from line start
-    end
+    // just to show that error is far away from line start
+    pretty_ctx.putc(0, ".");
+    pretty_ctx.putc(1, ".");
+    pretty_ctx.putc(2, ".");
   end
   if (pretty_end_idx < (err_ctx.len() - 2)) begin
-    for (int i = pretty_ctx.len() - 3; i < pretty_ctx.len(); i++) begin
-      pretty_ctx[i] = "."; // just to show that error is far away from line end
-    end
+    int n = pretty_ctx.len();
+    // just to show that error is far away from line end
+    pretty_ctx.putc(n-3, ".");
+    pretty_ctx.putc(n-2, ".");
+    pretty_ctx.putc(n-1, ".");
   end
 
   // Prepare offset for error pointer
-  repeat(err_pos - pretty_start_idx) begin
-    pointer_offset = {pointer_offset, " "};
-  end
+  pointer_offset = {(err_pos - pretty_start_idx){" "}};
 
   return $sformatf(
     "JSON string line %0d symbol %0d:\n%s\n%s\n%s",
