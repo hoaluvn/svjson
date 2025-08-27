@@ -6,8 +6,8 @@
 :url-verilator-github: https://github.com/verilator/verilator
 :url-antora: https://antora.org
 :url-asciidoc: https://asciidoc.org
-:url-tests-badge: https://github.com/esynr3z/svjson/actions/workflows/tests.yaml/badge.svg?branch=main
-:url-documentation-badge: https://github.com/esynr3z/svjson/actions/workflows/docs.yaml/badge.svg?branch=main
+:url-tests-badge: https://github.com/hoaluvn/svjson/actions/workflows/tests.yaml/badge.svg?branch=main
+:url-documentation-badge: https://github.com/hoaluvn/svjson/actions/workflows/docs.yaml/badge.svg?branch=main
 :url-json-pkg: src/json_pkg.sv
 
 = JSON encoder and decoder in SystemVerilog
