@@ -3,7 +3,6 @@ class json_encoder;
   localparam byte CR      = 8'd13; // 13=\r=CR - not in SV standard
   localparam byte DQUOTE  = 8'd34; // "   (double quote, 0x22)
   localparam byte BSLASH  = 8'd92; // \   (backslash,    0x5C)
-  localparam byte BS      = 8'd8;  // \b  (backspace,    0x08)
   localparam byte FF      = 8'd12; // \f  (form feed,    0x0C)
   localparam byte LF      = 8'd10; // \n  (line feed,    0x0A)
   localparam byte TAB     = 8'd9;  // \t  (horizontal tab,   0x09)
